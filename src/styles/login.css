@@ -1,0 +1,242 @@
+/* ─── Modern Login Page ───────────────────────────────────────────────────────── */
+.login-page { 
+  display: flex; 
+  height: 100vh; 
+  width: 100vw;
+  overflow: hidden; 
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.login-left { 
+  flex: 1; 
+  background: #0d1117; 
+  background-size: cover; 
+  background-position: center; 
+  position: relative; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+.login-left::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 50%, rgba(13, 17, 23, 0.8) 100%);
+  pointer-events: none;
+}
+
+.left-placeholder { 
+  font-size: 18px; 
+  font-weight: 500;
+  color: rgba(255,255,255,0.8); 
+  background: rgba(0,0,0,0.6); 
+  backdrop-filter: blur(8px);
+  padding: 16px 24px; 
+  border-radius: 12px;
+  border: 1px dashed rgba(255,255,255,0.2);
+  z-index: 1;
+}
+
+.upload-controls { 
+  position: absolute; 
+  top: 20px; 
+  right: 20px; 
+  z-index: 10; 
+  display: flex;
+  gap: 8px;
+}
+.upload-controls .btn {
+  border-radius: 8px;
+  background: rgba(13, 17, 23, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 6px 12px;
+  backdrop-filter: blur(4px);
+  transition: all 0.2s;
+}
+.upload-controls .btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.upload-controls .btn-danger {
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+/* ── Right Panel ── */
+.login-right { 
+  width: 500px; 
+  min-width: 320px; 
+  background: #0d1117; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  color: #F0F6FF; 
+  border-left: 1px solid rgba(255,255,255,0.05);
+  box-shadow: -10px 0 30px rgba(0,0,0,0.3);
+  z-index: 2;
+}
+
+.login-card { 
+  width: 85%; 
+  max-width: 380px; 
+  animation: fadeUp 0.4s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.logo { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  margin-bottom: 30px; 
+}
+.logo-img { 
+  max-width: 240px; 
+  height: auto; 
+}
+
+/* ── Form Elements ── */
+.form-label {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: rgba(240, 246, 255, 0.7) !important;
+  margin-bottom: 8px;
+}
+
+.form-control.password-input { 
+  background: rgba(255, 255, 255, 0.05) !important; 
+  color: #F0F6FF !important; 
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 15px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-control.password-input:focus {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(52, 211, 153, 0.5);
+  box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.1);
+}
+.form-control.password-input::placeholder {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Fix Chrome/Edge autofill turning inputs white and hiding text */
+.form-control.password-input:-webkit-autofill,
+.form-control.password-input:-webkit-autofill:hover, 
+.form-control.password-input:-webkit-autofill:focus, 
+.form-control.password-input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #111827 inset !important;
+  -webkit-text-fill-color: #F0F6FF !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.input-group { 
+  display: flex; 
+  align-items: stretch; 
+}
+.input-group .form-control { 
+  border-top-right-radius: 0; 
+  border-bottom-right-radius: 0; 
+  border-right: none;
+}
+.input-group .eye-btn { 
+  border-top-left-radius: 0; 
+  border-bottom-left-radius: 0; 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 0 16px; 
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: none;
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 0.2s;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.input-group .eye-btn:hover {
+  color: #F0F6FF;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ── Primary Button ── */
+.btn-primary.w-100 {
+  background: linear-gradient(135deg, #0f766e 0%, #064e3b 100%);
+  color: #fff;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  border-radius: 10px;
+  padding: 14px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(6, 78, 59, 0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+.btn-primary.w-100:hover {
+  background: linear-gradient(135deg, #115e59 0%, #065f46 100%);
+  border-color: rgba(52, 211, 153, 0.6);
+  box-shadow: 0 6px 16px rgba(6, 78, 59, 0.6), inset 0 1px 0 rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
+.btn-primary.w-100:active {
+  transform: translateY(0);
+}
+
+/* ── Cancel Button ── */
+.cancel-btn {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 14px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ── Links & Footer ── */
+.links { 
+  text-align: center; 
+  margin-top: 24px; 
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.links .link-light { 
+  color: rgba(255,255,255,0.6); 
+  text-decoration: none; 
+  font-size: 14px;
+  transition: color 0.2s;
+}
+.links .link-light:hover { 
+  color: #34D399; 
+}
+.credit { 
+  font-size: 12px; 
+  color: rgba(255,255,255,0.3); 
+  margin-top: 3rem; 
+  text-align: center; 
+  letter-spacing: 1px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .login-page { flex-direction: column; }
+  .login-left { height: 260px; width: 100%; flex: none; }
+  .login-left::after { background: linear-gradient(180deg, transparent 50%, rgba(13, 17, 23, 1) 100%); }
+  .login-right { width: 100%; flex: 1; border-left: none; box-shadow: none; }
+}
