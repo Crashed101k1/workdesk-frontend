@@ -3,7 +3,7 @@ import '../styles/login.css'
 import { authAPI } from '../services/api'
 
 export default function Register({ onCancel, onRegisterSuccess }) {
-  const [bg, setBg] = useState('')
+  const [bg, setBg] = useState('/media/FondoWorkDesk.png')
   const [showPassword, setShowPassword] = useState(false)
   const [showPassword2, setShowPassword2] = useState(false)
 

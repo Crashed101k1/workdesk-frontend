@@ -3,7 +3,8 @@ import '../styles/login.css'
 import { authAPI } from '../services/api'
 
 export default function Login({ onSwitchToRegister, onAuthSuccess }) {
-  const [bg, setBg] = useState('')
+  const defaultBg = '/media/FondoWorkDesk.png'
+  const [bg, setBg] = useState(defaultBg)
   const fileRef = useRef(null)
   const [showPassword, setShowPassword] = useState(false)
 
@@ -24,7 +25,7 @@ export default function Login({ onSwitchToRegister, onAuthSuccess }) {
   }
 
   const triggerFile = () => fileRef.current && fileRef.current.click()
-  const removeBg = () => { localStorage.removeItem('workdesk_login_bg'); setBg('') }
+  const removeBg = () => { localStorage.removeItem('workdesk_login_bg'); setBg(defaultBg) }
 
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
@@ -118,10 +119,10 @@ export default function Login({ onSwitchToRegister, onAuthSuccess }) {
   return (
     <div className="login-page">
       <div className="login-left" style={{ backgroundImage: bg ? `url(${bg})` : undefined }}>
-        {!bg && <div className="left-placeholder">Sube tu imagen para personalizar</div>}
+
         <div className="upload-controls">
           <button type="button" className="btn btn-light btn-sm" onClick={triggerFile} title="Cambiar imagen">✎</button>
-          {bg && <button type="button" className="btn btn-danger btn-sm ms-2" onClick={removeBg} title="Eliminar imagen">✕</button>}
+          {bg !== defaultBg && <button type="button" className="btn btn-danger btn-sm ms-2" onClick={removeBg} title="Eliminar imagen">✕</button>}
           <input ref={fileRef} type="file" accept="image/*" onChange={handleFile} style={{ display: 'none' }} />
         </div>
       </div>
