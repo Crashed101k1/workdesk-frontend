@@ -249,3 +249,21 @@
   background: #34D399;
   color: #0f141d;
 }
+
+@media (max-width: 768px) {
+  .toolhub-page {
+    height: auto !important;
+    min-height: 100vh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+  .toolhub-container { 
+    padding: 20px; 
+    overflow-y: visible !important;
+    flex: none !important;
+  }
+  .toolhub-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .toolhub-search-wrap { width: 100%; }
+  .tools-grid { grid-template-columns: 1fr; }
+  .toolhub-title { font-size: 26px; }
+}

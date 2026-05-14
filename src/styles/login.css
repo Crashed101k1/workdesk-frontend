@@ -235,8 +235,15 @@
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
-  .login-page { flex-direction: column; }
+  .login-page { 
+    flex-direction: column; 
+    height: auto; 
+    min-height: 100vh; 
+    overflow-y: auto; 
+    overflow-x: hidden; 
+  }
   .login-left { height: 260px; width: 100%; flex: none; }
   .login-left::after { background: linear-gradient(180deg, transparent 50%, rgba(13, 17, 23, 1) 100%); }
-  .login-right { width: 100%; flex: 1; border-left: none; box-shadow: none; }
+  .login-right { width: 100%; flex: none; border-left: none; box-shadow: none; padding-bottom: 40px; padding-top: 20px; }
+  .login-card { margin-bottom: 30px; }
 }

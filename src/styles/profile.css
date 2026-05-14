@@ -329,3 +329,41 @@
   margin-top: 10px;
   border-bottom: none;
 }
+
+@media (max-width: 768px) {
+  .profile-page {
+    height: auto !important;
+    min-height: 100vh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 20px 10px;
+  }
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+  .profile-tabs {
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding-right: 0;
+    padding-bottom: 10px;
+  }
+  .profile-tab {
+    white-space: nowrap;
+  }
+  .profile-content {
+    max-height: none !important;
+    overflow-y: visible !important;
+  }
+  .profile-general-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .profile-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .wallpaper-options {
+    justify-content: center;
+  }
+}

@@ -270,3 +270,13 @@
   text-decoration: line-through;
   opacity: .5;
 }
+
+@media (max-width: 768px) {
+  .prog-overall-pill { font-size: 13px; padding: 4px 12px; }
+  .prog-bar-header { padding: 12px; }
+  .prog-bar-title { font-size: 13px; }
+  .prog-bar-badge { font-size: 11px; padding: 2px 8px; }
+  .prog-note-btn { width: 28px; height: 28px; }
+  .prog-track { height: 10px; }
+  .prog-overall-track { height: 10px; }
+}

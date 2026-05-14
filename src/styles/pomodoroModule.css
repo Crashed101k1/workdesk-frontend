@@ -346,3 +346,13 @@
   transition: all .12s ease;
 }
 .pom-notif-banner button:hover { background: rgba(110,231,183,0.3); }
+
+@media (max-width: 768px) {
+  .pom-ring-wrap { width: 180px; height: 180px; }
+  .pom-ring-svg { width: 180px; height: 180px; }
+  .pom-time { font-size: 40px; }
+  .pom-btn-play { height: 44px; font-size: 14px; padding: 0 28px; }
+  .pom-icon-btn { width: 34px; height: 34px; }
+  .pom-setting-input { padding: 8px; font-size: 14px; }
+  .pom-sound-select { padding: 8px; font-size: 14px; }
+}

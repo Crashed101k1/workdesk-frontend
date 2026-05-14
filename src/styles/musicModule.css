@@ -268,3 +268,14 @@
   height: 100%;
   border: none;
 }
+
+@media (max-width: 768px) {
+  .station-card { padding: 14px 8px; }
+  .station-icon { font-size: 24px; }
+  .station-label { font-size: 11px; }
+  .result-item { padding: 12px; }
+  .res-title { font-size: 13px; }
+  .res-author { font-size: 11px; }
+  .search-input-wrapper input { font-size: 14px; padding: 10px; }
+  .search-trigger { padding: 0 16px; }
+}
